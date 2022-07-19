@@ -32,16 +32,16 @@ try:
     streamlit.dataframe(back_from_function)
 
 #create repeatable code block(function)
-def get_fruityvice_data(this_fruit_choice):
+  def get_fruityvice_data(this_fruit_choice):
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+this_fruit_choice)
 #streamlit.text(fruityvice_response.json())
 # write your own comment -what does the next line do? 
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
     return (fruityvice_normalized)
-except URLError as e:
+  except URLError as e:
   streamlit.error()
-streamlit.stop()
+  streamlit.stop()
 
 #import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
