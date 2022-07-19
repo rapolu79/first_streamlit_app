@@ -29,7 +29,7 @@ try:
 #streamlit.write('The user entered ', fruit_choice)
 #import requests
     back_from_function = get_fruityvice_data(fruit_choice)
-streamlit.dataframe(back_from_function)
+    streamlit.dataframe(back_from_function)
 
 #create repeatable code block(function)
 def get_fruityvice_data(this_fruit_choice):
